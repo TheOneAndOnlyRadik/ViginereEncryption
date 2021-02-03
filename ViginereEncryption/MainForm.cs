@@ -17,14 +17,15 @@ namespace ViginereEncryption
         public MainForm()
         {
             InitializeComponent();
+            cipherRadioButton.Checked = true;
         }
 
 
         private void radioButtons_CheckedChanged(object sender, EventArgs e)
         {
-            if (sender.Equals(cipherRadioButton))
+            if (cipherRadioButton.Checked)
                 processFunc = ViginereEncyptor.Cipher;
-            else if (sender.Equals(decipherRadioButton))
+            else if (decipherRadioButton.Checked)
                 processFunc = ViginereEncyptor.Decipher;
         }
         private void processButton_Click(object sender, EventArgs e)
